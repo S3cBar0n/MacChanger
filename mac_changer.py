@@ -6,6 +6,7 @@ import os
 
 def main():
     devnull = open(os.devnull, 'w')
+    #  Remove : so it is 12 digits like mac  see how to count integers only
     currentmac = subprocess.call("ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'", shell=True,
                                  stdout=devnull, stderr=devnull)
     mac = input("Please enter a 12 digit MAC: ")
